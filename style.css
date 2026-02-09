@@ -1,24 +1,12 @@
 :root{
 
-  --bg: #0f2230;
+  --bg:#0f2230;
 
   --bg2:#0b1a25;
-
-  --text:#0e1b24;
-
-  --muted:#5b6b76;
-
-  --card:#ffffff;
-
-  --line:#e7edf2;
 
   --primary:#2f8f3a;
 
   --primaryDark:#256f2e;
-
-  --ghost:#d7e6da;
-
-  --white:#ffffff;
 
 }
 
@@ -26,312 +14,164 @@
 
 *{box-sizing:border-box}
 
-html,body{margin:0;padding:0;font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; color:var(--text); background:#fff;}
+body{margin:0;font-family:system-ui;background:#fff}
 
-a{color:inherit; text-decoration:none}
 
-.container{width:min(1100px, 92%); margin:0 auto}
+
+.container{width:min(1100px,92%);margin:auto}
 
 
 
 .top{
 
-  position:sticky; top:0; z-index:20;
+  background:#fff;
 
-  background:rgba(255,255,255,0.92);
-
-  backdrop-filter: blur(10px);
-
-  border-bottom:1px solid var(--line);
+  border-bottom:1px solid #eee;
 
 }
 
 .top__inner{
 
-  display:flex; align-items:center; justify-content:space-between;
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
 
   padding:14px 0;
 
 }
 
-.brand{display:flex; align-items:center; gap:12px}
 
-.brand__logo{width:38px; height:38px; object-fit:contain}
 
-.brand__name{font-weight:800; letter-spacing:.2px}
+.brand{display:flex;align-items:center;gap:10px}
 
-.brand__tag{font-size:12px; color:var(--muted); letter-spacing:1.2px}
+.brand__logo{width:40px}
 
-.nav{display:flex; gap:18px; align-items:center}
+.brand__name{font-weight:800}
 
-.nav a{font-weight:600; color:#193242}
-
-.nav a:hover{opacity:.8}
+.brand__tag{font-size:12px;color:#777}
 
 
 
-.btn{
+.nav a{
 
-  display:inline-flex; align-items:center; justify-content:center;
+  margin-left:18px;
 
-  padding:12px 16px;
+  font-weight:600;
 
-  border-radius:10px;
+  text-decoration:none;
 
-  border:1px solid transparent;
-
-  font-weight:800;
-
-  cursor:pointer;
-
-  transition:.15s transform, .15s opacity, .15s background;
+  color:#193242;
 
 }
-
-.btn:active{transform:translateY(1px)}
-
-.btn--primary{background:var(--primary); color:var(--white)}
-
-.btn--primary:hover{background:var(--primaryDark)}
-
-.btn--secondary{background:#eef6f0; color:#1c3a28; border-color:#cfe5d3}
-
-.btn--ghost{background:transparent; border-color:#cfe0d2}
-
-.btn--full{width:100%}
 
 
 
 .hero{
 
-  background:linear-gradient(135deg, var(--bg), var(--bg2));
+  background:linear-gradient(135deg,var(--bg),var(--bg2));
 
-  color:#eaf2f6;
+  color:#fff;
 
-  padding:46px 0 30px;
+  padding:60px 0;
 
 }
+
+
 
 .hero__grid{
 
   display:grid;
 
-  grid-template-columns: 1.05fr .95fr;
+  grid-template-columns:1fr 1fr;
 
-  gap:28px;
+  gap:30px;
 
   align-items:center;
 
 }
 
+
+
 .hero h1{
 
-  margin:0 0 12px;
+  font-size:46px;
 
-  font-size:44px;
+  line-height:1.1;
 
-  line-height:1.06;
+  margin:0 0 15px;
 
 }
+
+
 
 .hero p{
 
-  margin:0 0 18px;
-
-  font-size:16px;
-
-  line-height:1.65;
-
   color:#d3e1ea;
 
-  max-width:560px;
+  font-size:18px;
+
+  margin-bottom:20px;
 
 }
 
-.hero__actions{display:flex; gap:12px; flex-wrap:wrap; margin:16px 0 18px}
 
-.trust{display:flex; gap:16px; flex-wrap:wrap; margin-top:10px}
 
-.trust__item{display:flex; align-items:center; gap:10px; color:#cfe0ea; font-weight:650}
+.btn{
 
-.dot{width:10px;height:10px;border-radius:50%; background:#86d594}
+  background:var(--primary);
+
+  color:#fff;
+
+  padding:14px 22px;
+
+  border-radius:8px;
+
+  font-weight:700;
+
+  text-decoration:none;
+
+  display:inline-block;
+
+}
+
+
+
+.btn:hover{
+
+  background:var(--primaryDark);
+
+}
 
 
 
 .hero__imageWrap{
 
-  background:rgba(255,255,255,0.08);
-
-  border:1px solid rgba(255,255,255,0.12);
-
-  border-radius:18px;
+  border-radius:14px;
 
   overflow:hidden;
 
-  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
 
 }
 
-.hero__imageWrap img{width:100%; height:auto; display:block}
 
 
-
-.section{padding:58px 0}
-
-.section--alt{background:#f6f8fa}
-
-h2{font-size:32px; margin:0 0 10px}
-
-.lead{color:var(--muted); line-height:1.7; margin:0 0 22px; max-width:820px}
-
-
-
-.cards{
-
-  display:grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap:16px;
-
-  margin-top:18px;
-
-}
-
-.card{
-
-  background:var(--card);
-
-  border:1px solid var(--line);
-
-  border-radius:16px;
-
-  padding:18px;
-
-  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.06);
-
-}
-
-.card__icon{font-size:22px; margin-bottom:10px}
-
-.card h3{margin:0 0 8px}
-
-.card p{margin:0; color:var(--muted); line-height:1.6}
-
-
-
-.split{
-
-  display:grid;
-
-  grid-template-columns: 1.05fr .95fr;
-
-  gap:18px;
-
-  align-items:start;
-
-}
-
-.step{
-
-  display:flex; gap:14px;
-
-  padding:14px 0;
-
-  border-bottom:1px solid #e8eef3;
-
-}
-
-.step__icon{font-size:22px}
-
-.step h3{margin:0 0 6px}
-
-.step p{margin:0; color:var(--muted); line-height:1.65}
-
-
-
-.formCard{
-
-  background:var(--card);
-
-  border:1px solid var(--line);
-
-  border-radius:16px;
-
-  padding:18px;
-
-  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
-
-  position:sticky;
-
-  top:88px;
-
-}
-
-.formCard h3{margin:0 0 6px}
-
-.muted{color:var(--muted)}
-
-.small{font-size:12px; line-height:1.55}
-
-
-
-label{display:block; font-weight:700; font-size:13px; margin-top:12px}
-
-input{
+.hero__imageWrap img{
 
   width:100%;
 
-  margin-top:8px;
-
-  padding:12px 12px;
-
-  border-radius:12px;
-
-  border:1px solid #dfe7ee;
-
-  outline:none;
-
-  font-size:15px;
+  display:block;
 
 }
 
-input:focus{border-color:#a9c8b0; box-shadow: 0 0 0 4px rgba(47,143,58,0.12)}
 
 
+@media(max-width:900px){
 
-.footer{
+  .hero__grid{grid-template-columns:1fr}
 
-  background:#0b1218;
-
-  color:#cfd8de;
-
-  padding:22px 0;
-
-}
-
-.footer__inner{display:flex; justify-content:space-between; align-items:center; gap:14px}
-
-.footer__brand{font-weight:900; letter-spacing:.2px}
-
-.footer__muted{color:#93a4ae; font-size:12px}
-
-.footer__right{display:flex; gap:14px; flex-wrap:wrap}
-
-.footer__right a{color:#cfd8de; font-weight:700}
-
-.footer__right a:hover{opacity:.85}
-
-
-
-@media (max-width: 900px){
-
-  .hero__grid, .split{grid-template-columns: 1fr}
-
-  .hero h1{font-size:36px}
-
-  .formCard{position:static}
-
-  .cards{grid-template-columns: 1fr; }
+  .hero h1{font-size:34px}
 
 }
