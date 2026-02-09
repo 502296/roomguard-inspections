@@ -1,463 +1,575 @@
-<!doctype html>
+:root{
 
-<html lang="en">
+  --bg:#0f2230;
 
-<head>
+  --bg2:#0b1a25;
 
-  <meta charset="utf-8" />
+  --text:#0e1b24;
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  --muted:#5b6b76;
 
-  <title>RoomGuard – Inspection Services</title>
+  --card:#ffffff;
 
-  <link rel="stylesheet" href="style.css" />
+  --line:#e7edf2;
 
-</head>
 
 
+  --primary:#2f8f3a;
 
-<body>
+  --primaryDark:#256f2e;
 
 
 
-  <!-- ✅ Top Nav -->
+  --white:#ffffff;
 
-  <header class="top">
+}
 
-    <div class="container top__inner">
 
-      <a class="brand" href="#">
 
-        <!-- ✅ GENERATED SHIELD LOGO (SVG) -->
+*{box-sizing:border-box}
 
-        <span class="brand__mark" aria-hidden="true">
+html,body{
 
-          <svg width="42" height="42" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  margin:0;padding:0;
 
-            <defs>
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
 
-              <linearGradient id="g1" x1="14" y1="10" x2="52" y2="56" gradientUnits="userSpaceOnUse">
+  color:var(--text);
 
-                <stop stop-color="#2F8F3A"/>
+  background:#fff;
 
-                <stop offset="1" stop-color="#256F2E"/>
+}
 
-              </linearGradient>
+a{color:inherit;text-decoration:none}
 
-              <linearGradient id="g2" x1="10" y1="8" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+.container{width:min(1100px, 92%); margin:0 auto}
 
-                <stop stop-color="#1A3446"/>
 
-                <stop offset="1" stop-color="#0F2230"/>
 
-              </linearGradient>
+/* ✅ top */
 
-              <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+.top{
 
-                <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.20"/>
+  position:sticky; top:0; z-index:50;
 
-              </filter>
+  background:rgba(255,255,255,0.92);
 
-            </defs>
+  backdrop-filter: blur(10px);
 
+  border-bottom:1px solid var(--line);
 
+}
 
-            <!-- Outer shield -->
+.top__inner{
 
-            <path filter="url(#shadow)"
+  display:flex; align-items:center; justify-content:space-between;
 
-              d="M32 4C41.6 9.2 51 10.8 56 11.5V31.2C56 44.5 46.8 55.6 32 60C17.2 55.6 8 44.5 8 31.2V11.5C13 10.8 22.4 9.2 32 4Z"
+  padding:14px 0;
 
-              fill="url(#g2)"/>
+}
 
+.brand{display:flex; align-items:center; gap:12px}
 
+.brand__mark{
 
-            <!-- Inner shield -->
+  width:42px;height:42px;
 
-            <path
+  display:inline-flex;
 
-              d="M32 9C40.3 13.5 48.4 14.9 52.6 15.5V31C52.6 42.2 44.8 51.5 32 55.2C19.2 51.5 11.4 42.2 11.4 31V15.5C15.6 14.9 23.7 13.5 32 9Z"
+  align-items:center;
 
-              fill="url(#g1)"/>
+  justify-content:center;
 
+}
 
+.brand__name{font-weight:900; letter-spacing:.2px}
 
-            <!-- White "protection" check -->
+.brand__tag{font-size:12px; color:var(--muted); letter-spacing:1.2px; text-transform:uppercase}
 
-            <path
+.nav{display:flex; gap:18px; align-items:center}
 
-              d="M27.1 33.2L23.4 29.6C22.6 28.8 21.3 28.8 20.5 29.6C19.7 30.4 19.7 31.7 20.5 32.5L25.6 37.6C26.4 38.4 27.6 38.4 28.4 37.6L43.6 22.4C44.4 21.6 44.4 20.3 43.6 19.5C42.8 18.7 41.5 18.7 40.7 19.5L27.1 33.2Z"
+.nav a{font-weight:650; color:#193242}
 
-              fill="#FFFFFF"/>
+.nav a:hover{opacity:.75}
 
 
 
-            <!-- Small "room" hint (subtle) -->
+/* ✅ buttons */
 
-            <path d="M25 23.5V18.8L32 14.8L39 18.8V23.5" stroke="#EAF6EC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+.btn{
 
-            <rect x="30.4" y="20.6" width="3.2" height="4.2" rx="0.6" fill="#9FE3B0" opacity="0.9"/>
+  display:inline-flex; align-items:center; justify-content:center;
 
-          </svg>
+  padding:12px 18px;
 
-        </span>
+  border-radius:10px;
 
+  border:1px solid transparent;
 
+  font-weight:900;
 
-        <div>
+  cursor:pointer;
 
-          <div class="brand__name">RoomGuard</div>
+  transition:.15s transform, .15s opacity, .15s background;
 
-          <div class="brand__tag">INSPECTION SERVICES</div>
+}
 
-        </div>
+.btn:active{transform:translateY(1px)}
 
-      </a>
+.btn--primary{background:var(--primary); color:var(--white)}
 
+.btn--primary:hover{background:var(--primaryDark)}
 
+.btn--full{width:100%}
 
-      <nav class="nav">
 
-        <a href="#why">Why</a>
 
-        <a href="#how">How It Works</a>
+/* ✅ HERO like image 2 (FIXED for desktop) */
 
-        <a href="#request">Request</a>
+.hero{
 
-        <a href="#contact">Contact</a>
+  position:relative;
 
-      </nav>
+  min-height:460px;
 
-    </div>
+  display:flex;
 
-  </header>
+  align-items:center;
 
+  overflow:hidden;
 
+}
 
-  <!-- ✅ HERO (مثل الصورة الثانية) -->
+.hero__bg{
 
-  <section class="hero">
+  position:absolute; inset:0;
 
-    <div class="hero__bg" style="background-image:url('hero.jpg');"></div>
+  background-size:cover;
 
-    <div class="hero__overlay"></div>
 
 
+  /* ✅ مهم: هذا يوقف “قص” الوجه/الكلب على شاشات الكمبيوتر */
 
-    <div class="container hero__content">
+  background-position: 78% 35%;
 
-      <div class="hero__card">
+  transform:scale(1.02);
 
-        <h1>Protect Your Guests<br/>Before Complaints Happen</h1>
+}
 
-        <p>
+.hero__overlay{
 
-          Preventive room inspections designed to protect hotel reputation and ratings.
+  position:absolute; inset:0;
 
-          Catch issues early, document clearly, and stay ahead of negative reviews.
+  background:linear-gradient(90deg,
 
-        </p>
+    rgba(15,34,48,0.92) 0%,
 
-        <a class="btn btn--primary" href="#request">Schedule a Walkthrough</a>
+    rgba(15,34,48,0.72) 42%,
 
-      </div>
+    rgba(15,34,48,0.15) 100%);
 
-    </div>
+}
 
-  </section>
+.hero__content{
 
+  position:relative;
 
+  padding:64px 0;
 
-  <!-- ✅ WHY -->
+}
 
-  <section id="why" class="section">
+.hero__card{
 
-    <div class="container">
+  width:min(650px, 92%);
 
-      <h2>Why Hotels Use Preventive Inspections</h2>
+  color:#eaf2f6;
 
-      <p class="lead">
+}
 
-        Unexpected room issues can lead to negative reviews, refunds, &amp; brand damage.
+.hero__card h1{
 
-        Routine verification helps management act early and document prevention.
+  margin:0 0 14px;
 
-      </p>
+  font-size:54px;
 
+  line-height:1.05;
 
+  letter-spacing:-.6px;
 
-      <div class="featureRow">
 
-        <div class="feature">
 
-          <div class="feature__icon">🔎</div>
+  /* ✅ يعطي نفس اللمعة مثل الصورة */
 
-          <div class="feature__title">Early Detection</div>
+  text-shadow: 0 2px 18px rgba(0,0,0,0.35);
 
-          <div class="feature__text">Routine inspections before issues appear</div>
+}
 
-        </div>
+.hero__card p{
 
+  margin:0 0 22px;
 
+  font-size:16px;
 
-        <div class="feature feature--center">
+  line-height:1.7;
 
-          <div class="feature__icon">📋</div>
+  color:#d3e1ea;
 
-          <div class="feature__title">Documentation</div>
+  max-width:560px;
 
-          <div class="feature__text">Clear reports for management records</div>
+}
 
-        </div>
 
 
+/* ✅ Desktop hero height (avoid cropping) */
 
-        <div class="feature">
+@media (min-width: 901px){
 
-          <div class="feature__icon">🛡️</div>
+  .hero{
 
-          <div class="feature__title">Peace of Mind</div>
+    /* ✅ أكبر على الكمبيوتر حتى الصورة ما تنقص */
 
-          <div class="feature__text">Confidence for staff and guests</div>
+    min-height: 620px;
 
-        </div>
+  }
 
-      </div>
+  .hero__content{
 
-    </div>
+    padding: 88px 0;
 
-  </section>
+  }
 
+}
 
 
-  <!-- ✅ HOW IT WORKS + FORM -->
 
-  <section id="how" class="section section--alt">
+/* ✅ Ultra-wide screens tweak */
 
-    <div class="container">
+@media (min-width: 1300px){
 
-      <h2>How It Works</h2>
+  .hero__bg{
 
+    background-position: 80% 30%;
 
+  }
 
-      <div class="split">
+}
 
-        <!-- Left steps -->
 
-        <div class="steps">
 
-          <div class="step">
+/* ✅ sections */
 
-            <div class="step__icon">📅</div>
+.section{padding:62px 0}
 
-            <div>
+.section--alt{background:#f6f8fa}
 
-              <h3>Schedule Visit</h3>
+h2{font-size:36px; margin:0 0 10px; letter-spacing:-.3px}
 
-              <p>Contact us to arrange a convenient walkthrough.</p>
+.lead{
 
-            </div>
+  color:var(--muted);
 
-          </div>
+  line-height:1.7;
 
+  margin:0 0 26px;
 
+  max-width:860px;
 
-          <div class="step">
+}
 
-            <div class="step__icon">🔍</div>
 
-            <div>
 
-              <h3>Inspect Rooms</h3>
+/* ✅ Feature row (3 icons) */
 
-              <p>We conduct thorough, discreet inspections of selected rooms.</p>
+.featureRow{
 
-            </div>
+  display:grid;
 
-          </div>
+  grid-template-columns: repeat(3, 1fr);
 
+  gap:22px;
 
+  align-items:start;
 
-          <div class="step step--last">
+  padding-top:10px;
 
-            <div class="step__icon">📝</div>
+}
 
-            <div>
+.feature{
 
-              <h3>Receive Report</h3>
+  display:flex;
 
-              <p>Get a detailed report documenting the inspection results.</p>
+  align-items:flex-start;
 
-            </div>
+  gap:12px;
 
-          </div>
+  padding:6px 0;
 
+}
 
+.feature--center{
 
-          <div class="ctaBox">
+  border-left:1px solid #e0e7ee;
 
-            <h3>Request a Walkthrough for Your Hotel</h3>
+  border-right:1px solid #e0e7ee;
 
-            <p class="muted">
+  padding-left:18px;
 
-              Schedule a walkthrough to learn how we can help protect your hotel from
+  padding-right:18px;
 
-              unexpected issues.
+}
 
-            </p>
+.feature__icon{
 
-          </div>
+  width:44px;height:44px;
 
-        </div>
+  display:flex;align-items:center;justify-content:center;
 
+  border-radius:12px;
 
+  background:#eaf6ec;
 
-        <!-- Right form card -->
+  font-size:20px;
 
-        <aside id="request" class="formCard">
+}
 
-          <h3>Request a Walkthrough</h3>
+.feature__title{font-weight:900; font-size:18px; margin-top:2px}
 
-          <p class="muted small">
+.feature__text{color:var(--muted); line-height:1.55; margin-top:4px}
 
-            Schedule a walkthrough to learn how we can help protect your hotel.
 
-          </p>
 
+/* ✅ Split */
 
+.split{
 
-          <form onsubmit="event.preventDefault(); alert('Request sent (demo) ✅');">
+  display:grid;
 
-            <label for="name">Name</label>
+  grid-template-columns: 1.05fr .95fr;
 
-            <input id="name" name="name" type="text" placeholder="Name" required />
+  gap:22px;
 
+  align-items:start;
 
+}
 
-            <label for="property">Property Name</label>
 
-            <input id="property" name="property" type="text" placeholder="Property Name" required />
 
+/* ✅ Steps */
 
+.steps{padding-right:8px}
 
-            <label for="rooms">Number of Rooms</label>
+.step{
 
-            <input id="rooms" name="rooms" type="number" placeholder="Number of Rooms" min="1" required />
+  display:flex; gap:14px;
 
+  padding:16px 0;
 
+  border-bottom:1px solid #e8eef3;
 
-            <label for="phone">Phone</label>
+}
 
-            <input id="phone" name="phone" type="tel" placeholder="Phone" required />
+.step--last{border-bottom:none}
 
+.step__icon{
 
+  width:44px;height:44px;
 
-            <label for="email">Email</label>
+  display:flex;align-items:center;justify-content:center;
 
-            <input id="email" name="email" type="email" placeholder="Email" required />
+  border-radius:12px;
 
+  background:#eaf6ec;
 
+  font-size:20px;
 
-            <button class="btn btn--primary btn--full" type="submit">Request Visit</button>
+}
 
-          </form>
+.step h3{margin:0 0 6px; font-weight:900}
 
-        </aside>
+.step p{margin:0; color:var(--muted); line-height:1.65}
 
-      </div>
 
-    </div>
 
-  </section>
+/* ✅ small CTA box */
 
+.ctaBox{
 
+  margin-top:18px;
 
-  <!-- ✅ CONTACT (Section) -->
+  background:#ffffff;
 
-  <section id="contact" class="section">
+  border:1px solid var(--line);
 
-    <div class="container contact">
+  border-radius:16px;
 
-      <div>
+  padding:18px;
 
-        <h2>Contact</h2>
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.06);
 
-        <p class="lead">
+}
 
-          Ready to protect your guests and reputation? Contact us and we’ll schedule a walkthrough.
+.ctaBox h3{margin:0 0 8px; font-weight:900}
 
-        </p>
+.muted{color:var(--muted)}
 
-      </div>
+.small{font-size:12px; line-height:1.55}
 
 
 
-      <div class="contactCard">
+/* ✅ Form card like image */
 
-        <div class="contactRow">
+.formCard{
 
-          <span class="contactLabel">Email</span>
+  background:var(--card);
 
-          <a class="contactValue" href="mailto:info@roomguard.com">info@roomguard.com</a>
+  border:1px solid var(--line);
 
-        </div>
+  border-radius:16px;
 
-        <div class="contactRow">
+  padding:18px;
 
-          <span class="contactLabel">Phone</span>
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.10);
 
-          <a class="contactValue" href="tel:+15022968168">(502) 296-8168</a>
+  position:sticky;
 
-        </div>
+  top:88px;
 
-        <div class="contactRow">
+}
 
-          <span class="contactLabel">Service Area</span>
+.formCard h3{margin:0 0 6px; font-weight:900}
 
-          <span class="contactValue">Louisville, KY + Nearby Areas</span>
 
-        </div>
 
-      </div>
+label{display:block; font-weight:800; font-size:13px; margin-top:12px}
 
-    </div>
+input{
 
-  </section>
+  width:100%;
 
+  margin-top:8px;
 
+  padding:12px 12px;
 
-  <!-- ✅ Footer -->
+  border-radius:12px;
 
-  <footer class="footer">
+  border:1px solid #dfe7ee;
 
-    <div class="container footer__inner">
+  outline:none;
 
-      <div>
+  font-size:15px;
 
-        <div class="footer__brand">RoomGuard</div>
+  background:#fff;
 
-        <div class="footer__muted">Preventive inspections for guest-ready rooms.</div>
+}
 
-      </div>
+input:focus{
 
-      <div class="footer__right">
+  border-color:#a9c8b0;
 
-        <a href="#why">Why</a>
+  box-shadow: 0 0 0 4px rgba(47,143,58,0.12);
 
-        <a href="#how">How</a>
+}
 
-        <a href="#request">Request</a>
 
-        <a href="#contact">Contact</a>
 
-      </div>
+/* ✅ Contact */
 
-    </div>
+.contact{
 
-  </footer>
+  display:grid;
 
+  grid-template-columns: 1fr 1fr;
 
+  gap:22px;
 
-</body>
+  align-items:start;
 
-</html>
+}
+
+.contactCard{
+
+  background:#fff;
+
+  border:1px solid var(--line);
+
+  border-radius:16px;
+
+  padding:18px;
+
+  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.06);
+
+}
+
+.contactRow{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:12px;
+
+  padding:10px 0;
+
+  border-bottom:1px solid #eef3f7;
+
+}
+
+.contactRow:last-child{border-bottom:none}
+
+.contactLabel{color:var(--muted); font-weight:800}
+
+.contactValue{font-weight:900; color:#193242}
+
+
+
+/* ✅ footer */
+
+.footer{
+
+  background:#0b1218;
+
+  color:#cfd8de;
+
+  padding:22px 0;
+
+}
+
+.footer__inner{
+
+  display:flex; justify-content:space-between; align-items:center; gap:14px
+
+}
+
+.footer__brand{font-weight:900; letter-spacing:.2px}
+
+.footer__muted{color:#93a4ae; font-size:12px}
+
+.footer__right{display:flex; gap:14px; flex-wrap:wrap}
+
+.footer__right a{color:#cfd8de; font-weight:800}
+
+.footer__right a:hover{opacity:.85}
+
+
+
+/* ✅ responsive */
+
+@media (max-width: 900px){
+
+  .nav{display:none}
+
+  .hero{min-height:420px}
+
+  .hero__card h1{font-size:40px}
+
+  .featureRow{grid-template-columns:1fr}
+
+  .feature--center{border:none; padding:0}
+
+  .split{grid-template-columns:1fr}
+
+  .formCard{position:static}
+
+  .contact{grid-template-columns:1fr}
+
+}
