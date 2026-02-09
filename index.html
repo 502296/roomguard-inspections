@@ -1,191 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RoomGuard — Inspection Services</title>
-  <meta name="description" content="Preventive inspections designed to protect your hotel reputation and ratings." />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoomGuard Inspection Services</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Top Bar -->
-  <header class="top">
-    <div class="container top__inner">
-      <div class="brand">
-        <img class="brand__logo" src="assets/logo.png" alt="RoomGuard logo" onerror="this.style.display='none'">
-        <div class="brand__text">
-          <div class="brand__name">RoomGuard</div>
-          <div class="brand__tag">INSPECTION SERVICES</div>
-        </div>
-      </div>
 
-      <nav class="nav">
-        <a href="#why">Why</a>
-        <a href="#how">How It Works</a>
-        <a href="#contact" class="btn btn--ghost">Request</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero__grid">
-      <div class="hero__left">
-        <h1>Protect Your Guests<br />Before Complaints Happen</h1>
-        <p>
-          Preventive room inspections designed to protect hotel reputation and ratings.
-          Catch issues early, document clearly, and stay ahead of negative reviews.
-        </p>
-
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="#contact">Schedule a Walkthrough</a>
-          <a class="btn btn--secondary" href="#how">See How It Works</a>
-        </div>
-
-        <div class="trust">
-          <div class="trust__item">
-            <span class="dot"></span>
-            <span>Discreet, professional visits</span>
-          </div>
-          <div class="trust__item">
-            <span class="dot"></span>
-            <span>Clear reports for management</span>
-          </div>
-          <div class="trust__item">
-            <span class="dot"></span>
-            <span>Actionable recommendations</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero__right">
-        <div class="hero__imageWrap">
-          <img src="assets/hero.png" alt="Hotel lobby and staff" />
-        </div>
+<header class="top">
+  <div class="container top__inner">
+    <div class="brand">
+      <img src="logo.png" class="brand__logo">
+      <div>
+        <div class="brand__name">RoomGuard</div>
+        <div class="brand__tag">INSPECTION SERVICES</div>
       </div>
     </div>
-  </section>
 
-  <!-- Why -->
-  <section class="section" id="why">
-    <div class="container">
-      <h2>Why Hotels Use Preventive Inspections</h2>
-      <p class="lead">
-        Unexpected room issues can lead to negative reviews, refunds, & brand damage.
-        Routine verification helps management act early and document prevention.
+    <nav class="nav">
+      <a href="#">Why</a>
+      <a href="#">How It Works</a>
+      <a href="#">Request</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero__grid">
+
+    <div>
+      <h1>Protect Your Guests<br>Before Complaints Happen</h1>
+
+      <p>
+        Preventive room inspections designed to protect hotel reputation and ratings.
       </p>
 
-      <div class="cards">
-        <div class="card">
-          <div class="card__icon">🔎</div>
-          <h3>Early Detection</h3>
-          <p>Routine inspections before issues appear.</p>
-        </div>
-
-        <div class="card">
-          <div class="card__icon">🧾</div>
-          <h3>Documentation</h3>
-          <p>Clear reports for management records.</p>
-        </div>
-
-        <div class="card">
-          <div class="card__icon">🛡️</div>
-          <h3>Peace of Mind</h3>
-          <p>Confidence for staff and guests.</p>
-        </div>
+      <div class="hero__actions">
+        <a href="mailto:contact@roomguardinspection.com" class="btn btn--primary">
+          Schedule a Walkthrough
+        </a>
       </div>
     </div>
-  </section>
 
-  <!-- How + Form -->
-  <section class="section section--alt" id="how">
-    <div class="container split">
-      <div class="split__left">
-        <h2>How It Works</h2>
-
-        <div class="step">
-          <div class="step__icon">📅</div>
-          <div>
-            <h3>Schedule Visit</h3>
-            <p>Contact us to arrange a convenient walkthrough.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step__icon">🧹</div>
-          <div>
-            <h3>Inspect Rooms</h3>
-            <p>We conduct thorough, discreet inspections of selected rooms.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step__icon">📄</div>
-          <div>
-            <h3>Receive Report</h3>
-            <p>Get a detailed report documenting the inspection results.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="split__right" id="contact">
-        <div class="formCard">
-          <h3>Request a Walkthrough</h3>
-          <p class="muted">
-            Schedule a walkthrough to learn how we can help protect your hotel from expected issues.
-          </p>
-
-          <!-- This form is front-end only for now -->
-          <form onsubmit="event.preventDefault(); alert('Saved! (Demo form)');">
-            <label>
-              Name
-              <input type="text" placeholder="Name" required />
-            </label>
-
-            <label>
-              Property Name
-              <input type="text" placeholder="Property Name" required />
-            </label>
-
-            <label>
-              Number of Rooms
-              <input type="number" placeholder="Number of Rooms" min="1" required />
-            </label>
-
-            <label>
-              Phone
-              <input type="tel" placeholder="Phone" required />
-            </label>
-
-            <label>
-              Email
-              <input type="email" placeholder="Email" required />
-            </label>
-
-            <button class="btn btn--primary btn--full" type="submit">Request Visit</button>
-          </form>
-
-          <p class="small muted">
-            By submitting, you agree to be contacted about scheduling and service details.
-          </p>
-        </div>
-      </div>
+    <div class="hero__imageWrap">
+      <img src="hero.jpg">
     </div>
-  </section>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__left">
-        <div class="footer__brand">RoomGuard</div>
-        <div class="footer__muted">Inspection Services</div>
-      </div>
-      <div class="footer__right">
-        <a href="#contact">Request</a>
-        <a href="#how">How It Works</a>
-        <a href="#why">Why</a>
-      </div>
-    </div>
-  </footer>
+  </div>
+</section>
+
 </body>
 </html>
