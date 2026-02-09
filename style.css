@@ -70,7 +70,23 @@ a{color:inherit;text-decoration:none}
 
 .brand{display:flex; align-items:center; gap:12px}
 
-.brand__logo{width:38px;height:38px;object-fit:contain}
+
+
+/* ✅ UPDATED: SVG logo styling (generated shield) */
+
+.brand__logo{
+
+  width:40px;
+
+  height:40px;
+
+  flex:0 0 40px;
+
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,.18));
+
+}
+
+
 
 .brand__name{font-weight:900; letter-spacing:.2px}
 
@@ -120,7 +136,7 @@ a{color:inherit;text-decoration:none}
 
   position:relative;
 
-  min-height:460px;
+  min-height:520px; /* ✅ UPDATED: better desktop framing */
 
   display:flex;
 
@@ -136,9 +152,9 @@ a{color:inherit;text-decoration:none}
 
   background-size:cover;
 
-  background-position:center;
+  background-position: 75% center; /* ✅ UPDATED: focus right side on desktop */
 
-  transform:scale(1.02);
+  transform:scale(1.03);
 
 }
 
@@ -497,6 +513,8 @@ input:focus{
   .nav{display:none}
 
   .hero{min-height:420px}
+
+  .hero__bg{background-position:center;} /* ✅ UPDATED: keep mobile nice */
 
   .hero__card h1{font-size:40px}
 
