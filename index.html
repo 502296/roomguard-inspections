@@ -13,21 +13,42 @@
   <header class="top">
     <div class="container top__inner">
       <a class="brand" href="#">
-        <!-- ✅ Shield SVG (Generated in code) -->
-        <svg class="brand__logo" viewBox="0 0 64 64" aria-hidden="true">
-          <!-- outer shield -->
-          <path d="M32 4 L54 14 V32 C54 45 44 56 32 60 C20 56 10 45 10 32 V14 Z"
-                fill="#0f2230"/>
-          <!-- inner shield -->
-          <path d="M32 9 L49 16 V31 C49 42 41 51 32 55 C23 51 15 42 15 31 V16 Z"
-                fill="#2f8f3a"/>
-          <!-- house -->
-          <path d="M26 41 V25 L32 21 L38 25 V41 Z" fill="#ffffff"/>
-          <!-- roof -->
-          <path d="M24 25 L32 18 L40 25" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- window -->
-          <rect x="29" y="30" width="6" height="6" rx="1.2" fill="#1f6feb"/>
-        </svg>
+        <!-- ✅ Shield generated in code (SVG) -->
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="38" height="38" role="img" aria-label="RoomGuard shield">
+            <!-- Outer shield -->
+            <path d="M32 4
+                     C39 10, 48 10, 56 12
+                     V32
+                     C56 45, 47 56, 32 60
+                     C17 56, 8 45, 8 32
+                     V12
+                     C16 10, 25 10, 32 4Z"
+                  fill="#0f2230"/>
+            <!-- Inner shield -->
+            <path d="M32 8
+                     C38 13, 47 13, 52 15
+                     V32
+                     C52 43, 44 52, 32 56
+                     C20 52, 12 43, 12 32
+                     V15
+                     C17 13, 26 13, 32 8Z"
+                  fill="#2f8f3a"/>
+
+            <!-- Simple "room" + "check" mark to show protection -->
+            <path d="M22 30V24.5C22 23.1 23.1 22 24.5 22H31V41H24.5C23.1 41 22 39.9 22 38.5V30Z"
+                  fill="#ffffff" opacity="0.95"/>
+            <path d="M31 22H39.5C40.9 22 42 23.1 42 24.5V38.5C42 39.9 40.9 41 39.5 41H31V22Z"
+                  fill="#ffffff" opacity="0.12"/>
+
+            <!-- small window -->
+            <rect x="25.5" y="26" width="4.2" height="5.2" rx="1" fill="#46a7ff" opacity="0.9"/>
+
+            <!-- check -->
+            <path d="M35.5 34.2l2.1 2.1 4.6-5"
+                  fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
 
         <div>
           <div class="brand__name">RoomGuard</div>
@@ -73,20 +94,26 @@
       <div class="featureRow">
         <div class="feature">
           <div class="feature__icon">🔎</div>
-          <div class="feature__title">Early Detection</div>
-          <div class="feature__text">Routine inspections before issues appear</div>
+          <div>
+            <div class="feature__title">Early Detection</div>
+            <div class="feature__text">Routine inspections before issues appear</div>
+          </div>
         </div>
 
         <div class="feature feature--center">
           <div class="feature__icon">📋</div>
-          <div class="feature__title">Documentation</div>
-          <div class="feature__text">Clear reports for management records</div>
+          <div>
+            <div class="feature__title">Documentation</div>
+            <div class="feature__text">Clear reports for management records</div>
+          </div>
         </div>
 
         <div class="feature">
           <div class="feature__icon">🛡️</div>
-          <div class="feature__title">Peace of Mind</div>
-          <div class="feature__text">Confidence for staff and guests</div>
+          <div>
+            <div class="feature__title">Peace of Mind</div>
+            <div class="feature__text">Confidence for staff and guests</div>
+          </div>
         </div>
       </div>
     </div>
